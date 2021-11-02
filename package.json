@@ -1,0 +1,34 @@
+{
+  "name": "sr-hack-action",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "author": "engineering@guardian.co.uk",
+  "scripts": {
+    "build": "ncc build index.ts -o dist",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@actions/core": "^1.4.0",
+    "@actions/exec": "^1.1.0",
+    "@actions/github": "^5.0.0",
+    "eslint-import-resolver-typescript": "^2.5.0"
+  },
+  "devDependencies": {
+    "@guardian/eslint-config-typescript": "^0.6.0",
+    "@guardian/prettier": "^0.6.0",
+    "@types/node": "^16.3.1",
+    "@typescript-eslint/eslint-plugin": "^4.28.3",
+    "@typescript-eslint/parser": "^4.28.3",
+    "@vercel/ncc": "^0.28.6",
+    "eslint": "^7.30.0",
+    "husky": "^7.0.4",
+    "prettier": "^2.3.2",
+    "prettier-eslint": "^12.0.0",
+    "typescript": "^4.3.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn build && git add -A ."
+    }
+  }
+}

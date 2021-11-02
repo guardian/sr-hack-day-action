@@ -1,0 +1,8 @@
+name: 'SR Hack Day Action'
+description: 'Does something cool'
+inputs:
+  repo-token:
+    required: true
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
